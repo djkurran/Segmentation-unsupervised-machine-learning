@@ -1,7 +1,7 @@
 # Segmentation-unsupervised-machine-learning
 ## Evaluating performance of microwave image reconstruction algorithms: extracting tissue types with segmentation using machine learning
 ### Supplementary Materials
-Detailed results for all cases presented in section 3.1 including the clusters after each iteration and the evolution of the PDF of the data over the segmented tumor region and outside the tumor regions.
+Detailed results for all cases presented in section 3.1 including the clusters after each iteration and the evolution of the PDF of the data over the region segmented as tumor (or region of interest) and region segmented outside tumor.
 
 ### List of Figures
 1. Figure S1: Model 1 forward model segmentation results
