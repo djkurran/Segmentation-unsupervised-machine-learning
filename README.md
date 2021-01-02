@@ -1,12 +1,18 @@
 # Segmentation-unsupervised-machine-learning
-## Evaluating performance of microwave image reconstruction algorithms: extracting tissue types with segmentation using machine learning
-### Supplementary Materials
 
 ***
 
-Detailed results for all cases presented in section 3.1 including the clusters after each iteration and the evolution of the PDF of the data over the region segmented as tumor (or region of interest) and region segmented outside tumor.
+## Evaluating performance of microwave image reconstruction algorithms: extracting tissue types with segmentation using machine learning
 
-### List of Figures
+### Abstract
+The manuscript Kurrant, D.; Omer, M.; Abdollahi, N.; Mojabi, P.; Fear, E.; LoVetri, J. Evaluating Performance of Micro-wave Image Reconstruction Algo-rithms: Extracting Tissue Types with Segmentation Using Machine Learning. J. Imaging 2021, 7, x. https://doi.org/10.3390/xxxxx presents a medical imaging segmentation technique to automatically segment medical microwave breast images into regions of interest corresponding to various tissue types. The segmentation leads to the decomposition of the breast interior into disjoint tissue masks. An array of region and distance-based metrics are applied to compare masks extracted from reconstructed images and ground truth models. The quantitative results reveal the accuracy with which the geometric and dielectric properties are reconstructed, and are supplemented with qualitative information. Consequently, the methods presented provide a framework that effectively furnishes quantitative and qualitative assessment of regions that contain a specific tissue. The resulting information facilitates comparisons that provide valuable insight into complex issues that impact image quality. 
+
+### Supplementary Materials
+This repository provides detailed results for all cases presented in section 3.1 including the clusters after each iteration and the evolution of the PDF of the data over the region segmented as tumor (or region of interest) and region segmented outside tumor. Moreover, videos are provided to demonstrate the iterative unsupervised machine learning approach used to refine the number of clusters to segment the interior of an *Extremely Dense* breast, *Scattered Density* breast, and an *Heterogeneously Dense* breast.
+
+***
+
+### Figures
 
 ***
 
@@ -39,3 +45,39 @@ Detailed results for all cases presented in section 3.1 including the clusters a
 
 ![](https://github.com/djkurran/Segmentation-unsupervised-machine-learning/blob/master/Figure%20S10%20Case%203.1c%20Segmentation%20results%20of%20reconstruction%20derived%20from%20skin%20region%20prior-Magnitude.png)
 10. Figure S10 Case 3.1c Segmentation results of reconstruction derived from skin region prior-Magnitude. (top-left) Region R extracted from Magnitude; (middle L-to-R) Evolution of clusters at *k = 3, 5, 6*, and *8*; (bottom-left) Evolution of PDF over data within tumor region and outside tumor region where numbers indicate iteration; (bottom-centre) PDF over data within clusters *c<sub>2</sub>*, and (bottom-left) clusters *c<sub>3</sub>* (blue line) to *c<sub>8</sub>* (black line). Cluster *c<sub>2</sub>* corresponds to fatty tissue, *c<sub>3</sub>*-*c<sub>4</sub>* corresponds to transition tissue, *c<sub>5</sub>*-*c<sub>7</sub>* fibroglandular tissues, and *c<sub>8</sub>* corresponds to malignant tissue, which are mapped to segmentation masks leading to segmented image (top-right).
+
+***
+
+### Video demonstrations
+
+***
+
+### Demonstration 1 - *Extremely dense* breast - detailed demonstration of iterative unsupervised machine learning segmentation technique
+
+This video examines the iterative unsupervised machine learning approach used to refine the number of clusters to segment the interior of an *Extremely Dense* breast so that with each iteration, the number of clusters used in the *k*-means clustering algorithm is incremented by one. The basis of the method is that after each iteration, the probability distribution of the dielectric properties within the largest valued cluster of the present iteration is compared with the probability distribution of the dielectric properties over the largest valued cluster of the previous iteration. Likewise, the probability distribution of dielectric properties outside the largest valued cluster of the present iteration is compared with the probability distribution of dielectric properties outside the largest valued cluster of the previous iteration. The algorithm terminates when the Kolmogorov-Smirnov two sample hypothesis test infers that the distribution over each of the groups of clusters has not significantly changed (statistically) after an iteration of the algorithm. 
+
+The video also demonstrates how the clusters are mapped to tissue masks, and how the tissue masks are mapped to tissue types. The tissue types combine to form a tissue type image that serves as a qualitative tool to assist with the interpretation of the reconstructed image. The tissue masks are used to form a quantitative framework for the geometric and dielectric property analysis of the reconstructed regions.
+
+[![Extremely Dense breast detailed demonstration of iterative unsupervised machine learning segmentation technique](https://img.youtube.com/vi/OzRo-AVjFVs/0.jpg)](https://youtu.be/OzRo-AVjFVs)
+
+***
+
+### Demonstration 2 - *Scattered Density* breast - detailed demonstration of iterative unsupervised machine learning segmentation technique
+
+This video is similar to *Video Demonstration 6* in that it examines the iterative unsupervised machine learning approach used to refine the number of clusters to segment the interior of a reconstructed image. The video differs from *Video 6* in that the reconstructed image is generated from data from a forward model of an electromagnetic model of a *Scattered Density* breast, instead of an *Extremely Dense* breast. Like *Video Demonstration 6*, the probability density distribution of the dielectric properties within the largest valued cluster and the probability density distribution of the dielectric properties outside the largest valued cluster are examined to see how they change with each iteration of the algorithm. 
+
+The video also demonstrates how the clusters are mapped to tissue masks, and how the tissue masks are mapped to tissue types. The tissue types combine to form a tissue type image that serves as a qualitative tool to assist with the interpretation of the reconstructed image. The tissue masks are used to form a quantitative framework for the geometric and dielectric property analysis of the reconstructed regions.
+
+[![Scattered Density breast detailed demonstration of iterative unsupervised machine learning segmentation technique](https://img.youtube.com/vi/03iC7axB1Is/0.jpg)](https://youtu.be/03iC7axB1Is)
+
+***
+
+### Demonstration 3 - *Heterogeneously Dense * breast - detailed demonstration of iterative unsupervised machine learning segmentation technique
+
+This video is similar to *Video Demonstration 6* in that it examines the iterative unsupervised machine learning approach used to refine the number of clusters to segment the interior of a reconstructed image. The video differs from *Video 6* in that the reconstructed image is generated from data from a forward model of an electromagnetic model of an *Heterogeneously Dense* breast, instead of an *Extremely Dense* breast. Like Video Demonstration 6, the probability density distribution of the dielectric properties within the largest valued cluster and the probability density distribution of the dielectric properties outside the largest valued cluster are examined to see how they change with each iteration of the algorithm. 
+
+The video also demonstrates how the clusters are mapped to tissue masks, and how the tissue masks are mapped to tissue types. The tissue types combine to form a tissue type image that serves as a qualitative tool to assist with the interpretation of the reconstructed image. The tissue masks are used to form a quantitative framework for the geometric and dielectric property analysis of the reconstructed regions.
+
+[![Heterogeneously Dense breast detailed demonstration of iterative unsupervised machine learning segmentation technique](https://img.youtube.com/vi/07fP5JFO8JE/0.jpg)](https://youtu.be/07fP5JFO8JE)
+
+
